@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "__export_time": 1584696921335,
+    "__export_app": "firecamp_beta_v1.0.5",
+    "__export_version": 1
+  },
+  "project": {
+    "name": "Saleor_E_commerce_Store"
+  },
+  "environment_snippets": [
+    {
+      "name": "Staging",
+      "is_global": false
+    },
+    {
+      "name": "Development",
+      "is_global": false,
+      "is_reserved": true
+    },
+    {
+      "name": "Production",
+      "is_global": false
+    }
+  ],
+  "requests": [
+    {
+      "name": "Saleor_E_commerce_Store",
+      "data": "### **Saleor Ecommerce Platform**\n---\n##### **Description**: \n\n__E-commerce for the PWA era__\nA modular, high performance e-commerce storefront built with GraphQL, Django, and ReactJS.\n\nSaleor is a rapidly-growing open source e-commerce platform that has served high-volume companies from branches like publishing and apparel since 2012. Based on Python and Django, the latest major update introduces a modular front end with a GraphQL API and storefront and dashboard written in React to make Saleor a full-functionality open source e-commerce.\n\nGet Saleor today!\n\n###### see documentation [here](https://demo.saleor.io/)\n###### [API](https://pwa.demo.saleor.rocks/graphql/) - Graphql endpoint use to execute graphql queries.\n---\n##### **Queries**\n###### **Outline**: Saleor provides so many queries, about all those queries provide below.\n\n---\n1. **Address_base_country_code**\n \n   In this query we get all about address and it get based on country code. so we can select address based on country code.\n---\n\n2. **Products_basicinfo**\n   \n    Using this query we can get product basic info that includes id, images, availability, description, etc.\n---\n3. **Products_priceinfo**\n    \n    This query provides price of products inclues net price, gross, discount, tax, etc.\n---\n4. **Products_moreinfo**\n   \n    More info of product that includes product id, description, category, images, publish, meta, etc.\n---\n",
+      "type": "md",
+      "description": "In this place you can get all about Saleor ecommerce platform"
+    },
+    {
+      "name": "Saleor_E_commerce_Store",
+      "url": {
+        "host": "pwa.demo.saleor.rocks",
+        "hostname": "pwa.demo.saleor.rocks",
+        "href": "https://pwa.demo.saleor.rocks/graphql/",
+        "origin": "https://pwa.demo.saleor.rocks",
+        "pathname": "/graphql/",
+        "protocol": "https:"
+      },
+      "method": "POST",
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "disable": false
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "disable": false
+        }
+      ],
+      "auth": {
+        "oauth1": {
+          "signature_method": "HMAC-SHA1"
+        },
+        "oauth2": {
+          "active_grant_type": "code",
+          "grant_types": {
+            "code": {
+              "grant_type": "code"
+            },
+            "implicit": {
+              "grant_type": "implicit"
+            },
+            "password": {
+              "grant_type": "password"
+            },
+            "client_credentials": {
+              "grant_type": "client_credentials"
+            }
+          }
+        },
+        "hawk": {
+          "algorithm": "SHA256"
+        }
+      },
+      "active_auth": "no_auth",
+      "type": "graphql",
+      "queries": [
+        {
+          "name": "FirstNbefore_products_instock",
+          "q_type": "Q",
+          "query": "query FirstNbefore_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, first: 10, before: \"20\") {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "AfterLast_menus_more",
+          "q_type": "Q",
+          "query": "query AfterLast_menus_more {\n  __typename\n  menus(after: \"10\", last: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Products_basicinfo",
+          "q_type": "Q",
+          "query": "query Products_basicinfo {\n  __typename\n  products(first: 10) {\n    edges {\n      node {\n        id\n        images {\n          id\n          alt\n        }\n        description\n        isAvailable\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "AfterBeforeFirstLast_menus_more",
+          "q_type": "Q",
+          "query": "query AfterBeforeFirstLast_menus_more {\n  __typename\n  menus(after: \"10\", before: \"10\", last: 10, first: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "lastNbefore_products_instock",
+          "q_type": "Q",
+          "query": "query lastNbefore_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, before: \"20\", last: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "BeforeAfterLast_menu_items",
+          "q_type": "Q",
+          "query": "query BeforeAfterLast_menu_items {\n  __typename\n  menuItems(last: 10, before: \"10\", after: \"10\") {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "First_products_instock",
+          "q_type": "Q",
+          "query": "query First_products_instock {\n  __typename\n  products(first: 10, stockAvailability: IN_STOCK) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Last_menus_more",
+          "q_type": "Q",
+          "query": "query Last_menus_more {\n  __typename\n  menus(last: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Menus_pageinfo",
+          "q_type": "Q",
+          "query": "query Menus_pageinfo {\n  __typename\n  menus(first: 10) {\n    pageInfo {\n      startCursor\n      endCursor\n      hasNextPage\n      hasPreviousPage\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Products_basicinfo_byid",
+          "q_type": "Q",
+          "query": "query Products_basicinfo_byid {\n  __typename\n  product(id: \"UHJvZHVjdDo3Mg==\") {\n    attributes {\n      attribute {\n        id\n        name\n      }\n    }\n    description\n    weight {\n      value\n      unit\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Last_menu_items",
+          "q_type": "Q",
+          "query": "query Last_menu_items {\n  __typename\n  menuItems(last: 10) {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "first_products_outofstock",
+          "q_type": "Q",
+          "query": "query first_products_outofstock {\n  __typename\n  products(stockAvailability: OUT_OF_STOCK, first: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "CreateAccount",
+          "q_type": "M",
+          "query": "mutation CreateAccount {\n  accountAddressCreate(input: {firstName: \"firstuser1\", lastName: \"indianuser\", companyName: \"hassoft\", streetAddress1: \"india\", streetAddress2: \"india\", city: \"cityofindia\", cityArea: \"areaofindia\", postalCode: \"111111\", country: IN, countryArea: \"areaofcountry\", phone: \"1212121212\"}, type: BILLING) {\n    accountErrors {\n      code\n      field\n      message\n    }\n    address {\n      city\n      country\n      firstName\n      id\n      lastName\n      phone\n    }\n    errors {\n      field\n      message\n    }\n  }\n}\n"
+        },
+        {
+          "name": "AfterBeforeFirst_menus_more",
+          "q_type": "Q",
+          "query": "query AfterBeforeFirst_menus_more {\n  __typename\n  menus(after: \"10\", before: \"10\", last: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "AfterBeforeLast_menus_more",
+          "q_type": "Q",
+          "query": "query AfterBeforeLast_menus_more {\n  __typename\n  menus(after: \"10\", before: \"10\", last: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "First_menus_more",
+          "q_type": "Q",
+          "query": "query First_menus_more {\n  __typename\n  menus(first: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Address_base_country_code",
+          "q_type": "Q",
+          "query": "query Address_base_country_code {\n  __typename\n  addressValidationRules(countryCode: AF) {\n    addressFormat\n    addressLatinFormat\n    allowedFields\n    cityAreaChoices {\n      raw\n      verbose\n    }\n    cityAreaType\n    countryName\n    countryCode\n    countryAreaType\n    cityChoices {\n      raw\n      verbose\n    }\n    cityType\n    countryAreaChoices {\n      raw\n      verbose\n    }\n    postalCodeExamples\n    postalCodeMatchers\n    postalCodePrefix\n    postalCodeType\n    requiredFields\n    upperFields\n  }\n}"
+        },
+        {
+          "name": "AfterFirst_menus_more",
+          "q_type": "Q",
+          "query": "query AfterFirst_menus_more {\n  __typename\n  menus(after: \"10\", first: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "firstNafterNbefor_products_instock",
+          "q_type": "Q",
+          "query": "query firstNafterNbefor_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, after: \"10\", before: \"30\", last: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "filter_products_instock_bypublish",
+          "q_type": "Q",
+          "query": "query filter_products_instock_bypublish {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, filter: {isPublished: true}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "lastNafterNbefor_products_instock",
+          "q_type": "Q",
+          "query": "query lastNafterNbefor_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, after: \"10\", before: \"30\", last: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Short_menu_items",
+          "q_type": "Q",
+          "query": "query Short_menu_items {\n  __typename\n  menuItems(first: 10, sortBy: {direction: ASC, field: NAME}) {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Menus",
+          "q_type": "Q",
+          "query": "query Menus {\n  __typename\n  menus(first: 10) {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "BeforeAfterFirst_menu_items",
+          "q_type": "Q",
+          "query": "query BeforeAfterFirst_menu_items {\n  __typename\n  menuItems(before: \"10\", after: \"10\", first: 10) {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "menu_items_more_byid",
+          "q_type": "Q",
+          "query": "query menu_items_more_byid {\n  __typename\n  menuItem(id: \"TWVudUl0ZW06MTI=\") {\n    id\n    name\n    menu {\n      id\n      name\n    }\n    category {\n      id\n      name\n      products(first: 10) {\n        edges {\n          node {\n            images {\n              alt\n            }\n            name\n          }\n        }\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "filter_products_instock_bystock",
+          "q_type": "Q",
+          "query": "query filter_products_instock_bystock {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, filter: {stockAvailability: IN_STOCK}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "menu_items_byid",
+          "q_type": "Q",
+          "query": "query menu_items_byid {\n  __typename\n  menuItem(id: \"TWVudUl0ZW06MTI=\") {\n    id\n    name\n    menu {\n      id\n      name\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Products_priceinfo",
+          "q_type": "Q",
+          "query": "query Products_priceinfo {\n  __typename\n  products(first: 10) {\n    edges {\n      node {\n        id\n        description\n        pricing {\n          discount {\n            currency\n            gross {\n              amount\n              currency\n              localized\n            }\n            net {\n              amount\n              currency\n              localized\n            }\n            tax {\n              amount\n              currency\n              localized\n            }\n          }\n          discountLocalCurrency {\n            currency\n            gross {\n              amount\n              currency\n              localized\n            }\n            net {\n              amount\n              currency\n              localized\n            }\n            tax {\n              amount\n              currency\n              localized\n            }\n          }\n          onSale\n          priceRange {\n            start {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n            stop {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n          }\n          priceRangeUndiscounted {\n            start {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n            stop {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n          }\n          priceRangeLocalCurrency {\n            start {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n            stop {\n              currency\n              gross {\n                amount\n                currency\n                localized\n              }\n              net {\n                amount\n                currency\n                localized\n              }\n              tax {\n                amount\n                currency\n                localized\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Short_products_instock",
+          "q_type": "Q",
+          "query": "query Short_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, sortBy: {direction: ASC}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "filter_products_instock_bycatagories",
+          "q_type": "Q",
+          "query": "query filter_products_instock_bycatagories {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, filter: {hasCategory: true}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Service",
+          "q_type": "Q",
+          "query": "query Service {\n  __typename\n  _service {\n    sdl\n  }\n}"
+        },
+        {
+          "name": "filter_products_instock_byprice",
+          "q_type": "Q",
+          "query": "query filter_products_instock_byprice {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, filter: {price: {gte: 1.5, lte: 1.5}}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Products_moreinfo",
+          "q_type": "Q",
+          "query": "query Products_moreinfo {\n  __typename\n  products(first: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n            productTypes(first: 10) {\n              edges {\n                node {\n                  id\n                  name\n                }\n              }\n              totalCount\n            }\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "Shortbyfield_products_instock",
+          "q_type": "Q",
+          "query": "query Shortbyfield_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10, sortBy: {field: NAME}) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "BeforeFirst_menus_more",
+          "q_type": "Q",
+          "query": "query BeforeFirst_menus_more {\n  __typename\n  menus(before: \"10\", first: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "First_menu_items",
+          "q_type": "Q",
+          "query": "query First_menu_items {\n  __typename\n  menuItems(first: 10) {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "BeforeLast_menus_more",
+          "q_type": "Q",
+          "query": "query BeforeLast_menus_more {\n  __typename\n  menus(before: \"10\", last: 10) {\n    edges {\n      node {\n        id\n        name\n        items {\n          id\n          name\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "AfterFirst_menu_items",
+          "q_type": "Q",
+          "query": "query AfterFirst_menu_items {\n  __typename\n  menuItems(first: 10, after: \"10\") {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "menu_items_parent_byid",
+          "q_type": "Q",
+          "query": "query menu_items_parent_byid {\n  __typename\n  menuItem(id: \"TWVudUl0ZW06MTI=\") {\n    id\n    name\n    parent {\n      id\n      name\n    }\n  }\n}"
+        },
+        {
+          "name": "last_products_instock",
+          "q_type": "Q",
+          "query": "query last_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, last: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "firtNafter_products_instock",
+          "q_type": "Q",
+          "query": "query firtNafter_products_instock {\n  __typename\n  products(stockAvailability: IN_STOCK, first: 10, after: \"10\") {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "BeforeFirst_menu_items",
+          "q_type": "Q",
+          "query": "query BeforeFirst_menu_items {\n  __typename\n  menuItems(before: \"10\", first: 10) {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "last_products_outofstock",
+          "q_type": "Q",
+          "query": "query last_products_outofstock {\n  __typename\n  products(stockAvailability: OUT_OF_STOCK, last: 10) {\n    edges {\n      node {\n        id\n        description\n        attributes {\n          attribute {\n            id\n            name\n          }\n        }\n        category {\n          id\n          name\n        }\n        images {\n          id\n          alt\n        }\n        isAvailable\n        isPublished\n        meta {\n          clients {\n            metadata {\n              key\n              value\n            }\n            name\n          }\n          namespace\n        }\n        name\n        seoTitle\n        seoDescription\n      }\n    }\n  }\n}"
+        },
+        {
+          "name": "Products_moreinfo_byid",
+          "q_type": "Q",
+          "query": "query Products_moreinfo_byid {\n  __typename\n  product(id: \"UHJvZHVjdDo3Mg==\") {\n    attributes {\n      attribute {\n        id\n        name\n      }\n    }\n    description\n    weight {\n      value\n      unit\n    }\n    chargeTaxes\n    collections {\n      id\n      name\n    }\n    id\n    images {\n      alt\n    }\n    isPublished\n    isAvailable\n    name\n    pricing {\n      discount {\n        currency\n        gross {\n          amount\n        }\n        net {\n          amount\n        }\n        tax {\n          amount\n        }\n      }\n      priceRange {\n        start {\n          net {\n            amount\n          }\n          tax {\n            amount\n          }\n        }\n        stop {\n          tax {\n            amount\n          }\n          net {\n            amount\n          }\n        }\n      }\n    }\n  }\n}\n"
+        },
+        {
+          "name": "AfterLast_menu_items",
+          "q_type": "Q",
+          "query": "query AfterLast_menu_items {\n  __typename\n  menuItems(last: 10, before: \"10\") {\n    edges {\n      node {\n        id\n        name\n        menu {\n          id\n          items {\n            name\n          }\n        }\n      }\n    }\n  }\n}\n"
+        }
+      ]
+    }
+  ]
+}
