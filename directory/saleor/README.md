@@ -27,4 +27,4 @@ Fetch the GraphQL schema from [Graphql Endpoint](https://pwa.demo.saleor.rocks/g
 
     More info of product that includes product id, description, category, images, publish, meta, etc.
 
-### Import [Firecamp collection](https://drive.google.com/file/d/1KDw_13zeds0SGFTM4j35SC8Q_zv_GBTV/view?usp=sharing) of Saleor GraphQL queries to debug within a sec.
+### Import [Firecamp collection](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/saleor/Saleor_E_commerce_Store_firecamp.json) of Saleor GraphQL queries to debug within a seconds
