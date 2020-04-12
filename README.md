@@ -14,7 +14,7 @@ This repo is ready made single click collection of various APIs like HTTP, Graph
 
 2. Import the .JSON collection of the API that you want to test inside Firecamp.
 
-![Import project] (https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/Import Firecamp.gif)
+![Import project] (https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/Import%20Firecamp.gif)
 
 Feel free to submit the PR if you want to list out your APIs. 
 
