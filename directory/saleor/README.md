@@ -9,7 +9,7 @@ Saleor is a rapidly-growing open source e-commerce platform that has served high
 
 Check the official documentation [here](https://demo.saleor.io/)
 
-Fetch the GraphQL schema from [Graphql Endpoint](https://pwa.demo.saleor.rocks/graphql/)
+![Saleor queries list and debugging](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/saleor/saleor_Intro_GIF.gif)
 
 ### **List of queries**
 ---
