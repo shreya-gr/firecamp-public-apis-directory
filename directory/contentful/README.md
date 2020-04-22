@@ -1,5 +1,6 @@
 
 ### Contentful public APIs
+---
 
 GraphQL Content API supports the Content Delivery API (CDA) and the Content Preview API (CPA) offering a fully functional equivalent to the REST implementation of the two APIs. It provides each space with a GraphQL schema based on its content types. GraphQL endpoint filtering capabilities, schema generation process, and error codes are explained in the [Reference guide](https://www.contentful.com/developers/docs/references/graphql/).
 
