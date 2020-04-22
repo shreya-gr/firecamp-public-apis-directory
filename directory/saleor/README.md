@@ -9,6 +9,8 @@ Saleor is a rapidly-growing open source e-commerce platform that has served high
 
 Check the official documentation [here](https://demo.saleor.io/)
 
+>### **Preview of Saleor query collection in Firecamp**
+
 ![Saleor queries list and debugging](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/saleor/saleor_Intro_GIF.gif)
 
 ### **List of queries**
