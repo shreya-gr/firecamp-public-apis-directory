@@ -65,3 +65,8 @@ provide lessonImage publish info, width, sys info, environment, spaces, etc.
 **13. lessonImageCollection**
 
 collection of lessonImage and contain image publish info, version, images id, a total of lesson images, etc.
+
+
+### Import [Firecamp collection](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/contentful/contentful_firecamp.json) of Contentful GraphQL queries to debug within a seconds
+
+Check out to learn [how to import queries](https://github.com/shreya-gr/firecamp-public-apis-directory#how-to-use-collection) collection in Firecamp
