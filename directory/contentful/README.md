@@ -7,7 +7,7 @@ Check out the [API-ENDPONIT](https://graphql.contentful.com/content/v1/spaces/f8
 
 >### **Preview of Contentful query collection in Firecamp**
 
-![Contentful queries list and debugging](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/contentful/contentful query collection Firecamp.gif)
+![Contentful queries list and debugging](https://raw.githubusercontent.com/shreya-gr/firecamp-public-apis-directory/master/directory/contentful/contentful%20query%20collection%20Firecamp.gif)
 
 ***
 
