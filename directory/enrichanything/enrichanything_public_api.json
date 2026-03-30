@@ -1,0 +1,92 @@
+{
+  "info": {
+    "_postman_id": "87f1c5e4-98c4-4f44-9c6a-713a1bca51ef",
+    "name": "EnrichAnything Public API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Read-only requests for EnrichAnything public market scans, report summaries, and API schema."
+  },
+  "item": [
+    {
+      "name": "Get public market",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/public-market?slug={{marketSlug}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "public-market"
+          ],
+          "query": [
+            {
+              "key": "slug",
+              "value": "{{marketSlug}}"
+            }
+          ]
+        },
+        "description": "Fetch one published market scan by slug."
+      },
+      "response": []
+    },
+    {
+      "name": "Get public report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/public-report?slug={{reportSlug}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "public-report"
+          ],
+          "query": [
+            {
+              "key": "slug",
+              "value": "{{reportSlug}}"
+            }
+          ]
+        },
+        "description": "Fetch one published report summary by slug."
+      },
+      "response": []
+    },
+    {
+      "name": "Get OpenAPI spec",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/openapi.json",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "openapi.json"
+          ]
+        },
+        "description": "Fetch the public OpenAPI schema."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.enrichanything.com"
+    },
+    {
+      "key": "marketSlug",
+      "value": "shopify-france-klaviyo-no-sms"
+    },
+    {
+      "key": "reportSlug",
+      "value": "france-klaviyo-sms-gap"
+    }
+  ]
+}
