@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "c7f56fb3-8df6-4d6f-9b52-4e4d8e2f3f34",
+    "name": "AgentSEO REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "AgentSEO REST API for AI-ready SEO data: Google SERP analysis, keyword research, rank tracking, content-gap analysis, and AI Overview monitoring. Paid API with 100 one-time live credits; API-key authentication."
+  },
+  "item": [
+    {
+      "name": "Get OpenAPI spec",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://www.agentseo.dev/openapi.yaml",
+        "description": "Fetch the public OpenAPI specification."
+      },
+      "response": []
+    },
+    {
+      "name": "Search Google SERP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{apiKey}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"{{query}}\",\"location\":\"United States\"}"
+        },
+        "url": "{{baseUrl}}/search",
+        "description": "Run Google SERP analysis for a query."
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze SERP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{apiKey}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"keyword\":\"{{query}}\"}"
+        },
+        "url": "{{baseUrl}}/analyze/serp",
+        "description": "Analyze search results and visibility signals."
+      },
+      "response": []
+    },
+    {
+      "name": "AI Overview extraction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{apiKey}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"{{query}}\"}"
+        },
+        "url": "{{baseUrl}}/ai-overview/extract",
+        "description": "Extract Google AI Overview results for a query."
+      },
+      "response": []
+    },
+    {
+      "name": "Track rankings",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{apiKey}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"domain\":\"{{domain}}\",\"keywords\":[\"{{query}}\"]}"
+        },
+        "url": "{{baseUrl}}/rank/track",
+        "description": "Track keyword rankings for a domain."
+      },
+      "response": []
+    },
+    {
+      "name": "Check async job",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{apiKey}}"
+          }
+        ],
+        "url": "{{baseUrl}}/jobs/{{jobId}}",
+        "description": "Read the status and result of an asynchronous job."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.agentseo.dev/api/v1"
+    },
+    {
+      "key": "apiKey",
+      "value": ""
+    },
+    {
+      "key": "query",
+      "value": "SEO API for AI agents"
+    },
+    {
+      "key": "domain",
+      "value": "example.com"
+    },
+    {
+      "key": "jobId",
+      "value": ""
+    }
+  ]
+}
